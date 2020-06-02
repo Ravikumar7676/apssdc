@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Consultancy Services</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Titillium+Web:300" />
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="jquery@2.1.3" data-semver="2.1.3" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+    <nav id="main-menu" role="navigation" class="main-menu">
+      
+      <div class="logo">
+        
+        <a href="/">Logo</a>
+        
+      </div>
+        <ul>
+          <li class="has-subnav">
+            <a href="#settings">
+              <i class="fa fa-gear fa-lg"></i>
+              <span class="nav-text"> Settings</span>
+            </a>
+            <ul class="sub-nav">
+              <li><a href="#account">Account</a></li>
+              <li><a href="#profile">Profile</a></li>
+              <li><a href="#edit">Edit Profile</a></li>
+            </ul>
+          </li>
+        </ul>
+      <!-- </div> -->
+      
+      <ul>
+        
+        <li class="has-no-subnav">
+          <a href="#dashboard">
+            <i class="fa fa-home fa-lg"></i>
+            <span class="nav-text"> Dashboard</span>
+          </a>
+        </li>
+        
+        <li class="has-subnav">
+          <a href="#overview">
+            <i class="fa fa-area-chart fa-lg"></i>
+            <span class="nav-text"> Overview</span>
+          </a>
+        </li>
+        
+        <li class="has-subnav">
+          <a href="#reports">
+            <i class="fa fa-file fa-lg"></i>
+            <span class="nav-text"> Reports</span>
+          </a>
+        </li>
+        
+        <li class="has-subnav">
+          <a href="#analytics">
+            <i class="fa fa-line-chart fa-lg"></i>
+            <span class="nav-text"> Analytics</span>
+          </a>
+        </li>
+        
+        <li class="has-no-subnav">
+          <a href="#export">
+            <i class="fa fa-download"></i>
+            <span class="nav-text"> Export</span>
+          </a>
+        </li>
+      </ul>
+      
+      <ul class="logout">
+        <li class="has-no-subnav">
+          <a href="#logout">
+            <i class="fa fa-sign-out fa-lg"></i>
+            <span class="nav-text"> Logout</span>
+          </a>
+        </li>
+      </ul>
+      
+    </nav>
+    
+    <div class="container-fluid app-view-container">
+      
+      <div class="row">
+        
+        <main id="main" role="main" class="container-fluid main">
+          <div id="settings">
+            <h1 class="page-header">Settings</h1>
+          </div>
+
+          <div id="overview">
+            <h1 class="page-header">Overview</h1>
+          </div>
+
+          <div id="reports">
+            <h1 class="page-header">Reports</h1>
+          </div>
+
+          <div id="analytics">
+            <h1 class="page-header">Analytics</h1>
+          </div>
+
+          <div id="export">
+            <h1 class="page-header">Export</h1>
+          </div>
+
+            <h2 class="sub-header">Projects</h2>
+
+            <div class="table-responsive">
+            
+              <table class="table table-striped">
+                
+                <thead>
+                  
+                  <tr>
+                    <th>#</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                  </tr>
+                  
+                </thead>
+                
+                <tbody>
+                  
+                  <tr>
+                    <td>1,001</td>
+                    <td>Lorem</td>
+                    <td>ipsum</td>
+                    <td>dolor</td>
+                    <td>sit</td>
+                  </tr>
+                  
+                 
+                  
+                </tbody>
+                
+              </table>
+            
+            </div>
+
+          </div>
+          
+        </main>
+        
+      </div>
+      
+    </div>
+    <script type="text/javascript">
+      (function ($) {
+          'use strict';
+
+          var mainMenu = $('#main-menu'),
+              nav = $('.has-no-subnav'),
+              subNavLi = $('.has-subnav'),
+              subNav = $('.sub-nav');
+
+          mainMenu.mouseleave(function () {
+              subNavLi.removeClass('expanded');
+              subNav.removeClass('expanded');
+          });
+
+          nav.click(function () {
+
+              subNavLi.removeClass('expanded');
+              subNav.removeClass('expanded');
+
+          });
+
+          subNavLi.click(function () {
+
+              var _this = $(this);
+
+              if (_this.hasClass('expanded')) {
+
+                  _this.removeClass('expanded');
+                  subNav.removeClass('expanded');
+
+              } else {
+
+                  subNavLi.removeClass('expanded');
+                  _this.addClass('expanded');
+                  subNav.removeClass('expanded');
+                  _this.find(subNav).addClass('expanded');
+
+              }
+
+          });
+
+      }(jQuery));
+    </script>
+  </body>
+
+</html>
